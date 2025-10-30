@@ -12,7 +12,8 @@ interface Message {
   legalContext?: string[];
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://backend-9kol.onrender.com';
+// Use same-origin proxy routes by default to avoid CORS; allow override via env
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || '';
 
 export default function Home() {
   const [messages, setMessages] = useState<Message[]>([]);
